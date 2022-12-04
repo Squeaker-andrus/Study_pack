@@ -22,3 +22,4 @@ def str_in_num(text_num):
 print(type(str_in_num(text_num)))
 print(str_in_num(text_num))
 # Хмм, скипает точку и все выводит в int... думаем...
+# Код можно и укоротить, но тогда вообще ничего не понятно будет
