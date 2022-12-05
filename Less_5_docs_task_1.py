@@ -31,16 +31,16 @@ temp = [
     [20.39, 27.75, 29.19, 20.75, 22.23, 27.54, 28.33, 21.06, 29.3, 29.49, 20.54, 22.03, 29.67, 28.9, 22.92, 23.01, 20.63, 22.35, 20.94, 22.73]
 ]
 print(f'Максимальная температура = {max(map(lambda t: max(t), temp))}')
-
+# EZ
 print(f'Минимальная температура = {min(map(lambda t: min(t), temp))}')
-
+# EZ
 print(f'Средняя температура по дням = {dict(zip((list(i for i in range(1, 30))), (map(lambda t: round((sum(t)/len(t)), 2), temp))))}')
-
-print(f'Температуры выше средней в день = {list(list(map(lambda t: t >= round((sum(t)/len(t)), 2), temp) for i in temp))}')
-# Застрял
-# print(с процентами)
-# Тоже застрял
-print(f'Максимальная температура была на {temp.index(list(max(map(lambda t: max(t), temp))))}-й день с температурой {max(map(lambda t: max(t), temp))}')
-# приуныл
-print(f'Минимальная температура была на {temp.index(list(min(map(lambda t: min(t), temp))))}-й день с температурой {min(map(lambda t: min(t), temp))}')
-# приуныл
+# почти ez
+print(f'Температуры выше средней в день = {list(map(lambda t: list(filter(lambda f: f >= round((sum(t)/len(t)), 2), t)), temp))}')
+# Кажется работает, но только не уверен в правильности вычислений, сам с трудом понял как у меня это получилось.
+print(f'Процент количества температур выше средней в день = {list(map(lambda t: str(round((len(list(filter(lambda f: f >= round((sum(t)/len(t)), 2), t)))/len(t))*100, 1)) + "%", temp))}')
+# Как же легко запутаться
+print(f'Максимальная температура была на {list(map(lambda t: max(t), temp)).index(max(map(lambda t: max(t), temp))) + 1}-й день с температурой {max(map(lambda t: max(t), temp))}')
+# Бррррр!!! Работает с*ка!!! Я справился!!!
+print(f'Минимальная температура была на {list(map(lambda t: min(t), temp)).index(min(map(lambda t: min(t), temp))) + 1}-й день с температурой {min(map(lambda t: min(t), temp))}')
+# Аналогично с max, только min
