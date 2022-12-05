@@ -41,6 +41,6 @@ print(f'Температуры выше средней в день = {list(map(l
 print(f'Процент количества температур выше средней в день = {list(map(lambda t: str(round((len(list(filter(lambda f: f >= round((sum(t)/len(t)), 2), t)))/len(t))*100, 1)) + "%", temp))}')
 # Как же легко запутаться
 print(f'Максимальная температура была на {list(map(lambda t: max(t), temp)).index(max(map(lambda t: max(t), temp))) + 1}-й день с температурой {max(map(lambda t: max(t), temp))}')
-# Бррррр!!! Работает с*ка!!! Я справился!!!
+# Бррррр!!! Работает с*ка!!! Я справился!!! Думал сделать через словарь, но так короче вышло
 print(f'Минимальная температура была на {list(map(lambda t: min(t), temp)).index(min(map(lambda t: min(t), temp))) + 1}-й день с температурой {min(map(lambda t: min(t), temp))}')
-# Аналогично с max, только min
+# EZ - Аналогично с max, только min
